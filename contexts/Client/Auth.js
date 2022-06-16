@@ -86,7 +86,7 @@ Router.get('/Login', (req, res) => {
 
 Router.post('/Registration', (req, res, next) => {
 
-    if(Object.keys(req.query).length < 1)
+    if(Object.keys(req.body).length < 1)
     {
         res.send({ 
             error:true,
@@ -95,7 +95,7 @@ Router.post('/Registration', (req, res, next) => {
         return
     }
 
-    if(!req.query.firstname)
+    if(!req.body.firstname)
     { 
         res.send({ 
             error:true,
@@ -104,7 +104,7 @@ Router.post('/Registration', (req, res, next) => {
         return
     }
 
-    if(!req.query.lastname)
+    if(!req.body.lastname)
     { 
         res.send({ 
             error:true,
@@ -113,7 +113,7 @@ Router.post('/Registration', (req, res, next) => {
         return
     }
 
-    if(!req.query.email)
+    if(!req.body.email)
     { 
         res.send({ 
             error:true,
@@ -121,7 +121,7 @@ Router.post('/Registration', (req, res, next) => {
         })
     }
 
-    if(!req.query.password)
+    if(!req.body.password)
     { 
         res.send({ 
             error:true,
@@ -131,7 +131,7 @@ Router.post('/Registration', (req, res, next) => {
     }
 
 
-    mariadb.query(`INSERT INTO client VALUES(DEFAULT,'${req.query.firstname}','${req.query.lastname}','${req.query.email}','${req.query.password}',DEFAULT)`, (err, rows, fields) => {
+    mariadb.query(`INSERT INTO client VALUES(DEFAULT,'${req.body.firstname}','${req.body.lastname}','${req.body.email}','${req.body.password}',DEFAULT)`, (err, rows, fields) => {
         if (!err) {
             res.send(rows);
             return
