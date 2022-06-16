@@ -90,7 +90,7 @@ Router.post('/Registration', (req, res, next) => {
     {
         res.send({ 
             error:true,
-            message:"element of query were not found"
+            message:"element of body were not found"
         })
         return
     }
@@ -99,7 +99,7 @@ Router.post('/Registration', (req, res, next) => {
     { 
         res.send({ 
             error:true,
-            message:"firstname is expacted as a element of query"
+            message:"firstname is expacted as a element of body"
         })
         return
     }
@@ -108,7 +108,7 @@ Router.post('/Registration', (req, res, next) => {
     { 
         res.send({ 
             error:true,
-            message:"lastname is expacted as a element of query"
+            message:"lastname is expacted as a element of body"
         })
         return
     }
@@ -117,7 +117,7 @@ Router.post('/Registration', (req, res, next) => {
     { 
         res.send({ 
             error:true,
-            message:"email is expacted as a element of query"
+            message:"email is expacted as a element of body"
         })
     }
 
@@ -125,7 +125,7 @@ Router.post('/Registration', (req, res, next) => {
     { 
         res.send({ 
             error:true,
-            message:"password is expacted as a element of query"
+            message:"password is expacted as a element of body"
         })
         return
     }
