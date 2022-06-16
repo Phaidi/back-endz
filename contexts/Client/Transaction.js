@@ -49,7 +49,7 @@ Router.put('/AccBal', (req, res) => {
     {
         mariadb.query(`SELECT balance FROM client WHERE email = ${req.query.email}`, (err, rows, fields) => {
             if (!err) {
-                let newAmt = rows.balance + req.query.amount
+                let newAmt = rows[0].balance + req.query.amount
                 mariadb.query(`UPDATE client SET balance = ${newAmt} WHERE email = '${req.query.email}'`, (err, rows, fields) => {
                     if (!err) {
                         res.send(rows)
@@ -77,7 +77,7 @@ Router.put('/AccBal', (req, res) => {
     { 
         mariadb.query(`SELECT balance FROM client WHERE email = '${req.query.email}'`, (err, rows, fields) => {
             if (!err) {
-                let newAmt = rows.balance - req.query.amount
+                let newAmt = rows[0].balance - req.query.amount
                 mariadb.query(`UPDATE client SET balance = ${newAmt} WHERE email = '${req.query.email}'`, (err, rows, fields) => {
                     if (!err) {
                         res.send(rows)
