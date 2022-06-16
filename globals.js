@@ -1,6 +1,6 @@
 //DB CRDS
-const USERNAME = "admin";
-const PASSWORD = "icep2020"
+const USERNAME = "root";
+const PASSWORD = ""
 const DATABASE_HOSTNAME = "localhost";
 //API PORTS
 const HOSTNAME = "localhost"

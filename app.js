@@ -11,8 +11,8 @@ const cors = require('cors');
 //Student
 //--Test
 const TestQuery_cnxt = require("./contexts/Common/TestQuery");
-const Auth_cnxt = require("./contexts/Common/TestQuery");
-const Trans_cnxt = require("./contexts/Common/TestQuery");
+const Auth_cnxt = require("./contexts/Client/Auth");
+const Trans_cnxt = require("./contexts/Client/Transaction");
 
 
 //-----------------------------------------------------------------------------------Custome Libraries
