@@ -11,6 +11,8 @@ const cors = require('cors');
 //Student
 //--Test
 const TestQuery_cnxt = require("./contexts/Common/TestQuery");
+const Auth_cnxt = require("./contexts/Common/TestQuery");
+const Trans_cnxt = require("./contexts/Common/TestQuery");
 
 
 //-----------------------------------------------------------------------------------Custome Libraries
@@ -34,10 +36,12 @@ app.get('/', (req, res) => {
 
 //context channelling Student
 app.use('/Test/TestQuery', TestQuery_cnxt);
+app.use('/', Auth_cnxt);
+app.use('/', Trans_cnxt);
 
 
 
-app.listen(GRAPH_PORT, (e) => {
+app.listen(APP_PORT, (e) => {
     
     console.log("*                   PORT : "+APP_PORT+"                        *");
     console.log("********************************************************");
