@@ -10,7 +10,27 @@
 			"name": "Login",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "localhost:7000/login?email=raditlalo@gmail.com&password=123",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "raditlalo@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "123"
+						}
+					]
+				}
 			},
 			"response": []
 		},
@@ -44,8 +64,32 @@
 		{
 			"name": "Transaction",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:7000/AccBal?email=cbshezi@gmail.com&amount=250&type=+",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"AccBal"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "cbshezi@gmail.com"
+						},
+						{
+							"key": "amount",
+							"value": "250"
+						},
+						{
+							"key": "type",
+							"value": "+"
+						}
+					]
+				}
 			},
 			"response": []
 		}
