@@ -43,9 +43,18 @@ Router.get('/Login', (req, res) => {
         if (!err) {
             if(rows.length > 0)
             {
-                if(req.query.password == rows.password)
+            
+                if(req.query.password == rows[0].password)
                 {
                     res.send(rows)
+                    return
+                }
+                else
+                {
+                    res.send({ 
+                        error:true,
+                        message:"Password is incorrect"    
+                    })
                     return
                 }
             }
