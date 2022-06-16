@@ -21,7 +21,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\":\"\",\r\n    \"password\":\"\",\r\n    \"firstname\":\"\",\r\n    \"lastname\":\"\"\r\n}",
+					"raw": "{\r\n    \"email\":\"cbshezi@gmail.com\",\r\n    \"password\":\"123\",\r\n    \"firstname\":\"Cebolenkosi\",\r\n    \"lastname\":\"Shezi\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
