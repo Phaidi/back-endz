@@ -15,6 +15,7 @@ Router.put('/AccBal', (req, res) => {
             error:true,
             message:"element of query were not found"
         })
+        return
     }
 
     if(!req.query.email)
@@ -23,6 +24,7 @@ Router.put('/AccBal', (req, res) => {
             error:true,
             message:"email is expacted as a element of query"
         })
+        return
     }
 
     if(!req.query.amount)
@@ -31,6 +33,7 @@ Router.put('/AccBal', (req, res) => {
             error:true,
             message:"amount is expacted as a element of query"
         })
+        return
     }
 
     if(!req.query.type)
@@ -39,6 +42,7 @@ Router.put('/AccBal', (req, res) => {
             error:true,
             message:"type is '-' or '+' expacted as a element of query"
         })
+        return
     }
 
     if(req.query.type == "+")
@@ -49,6 +53,7 @@ Router.put('/AccBal', (req, res) => {
                 mariadb.query(`UPDATE client SET balance = ${newAmt} WHERE email = '${req.query.email}'`, (err, rows, fields) => {
                     if (!err) {
                         res.send(rows)
+                        return
                     }
                     else
                     {
@@ -56,6 +61,7 @@ Router.put('/AccBal', (req, res) => {
                             error:true,
                             message:err
                         })
+                        return
                     }
                 });
             } else {
@@ -63,6 +69,7 @@ Router.put('/AccBal', (req, res) => {
                     error:true,
                     message:err
                 })
+                return
             }
         })
     }
@@ -74,6 +81,7 @@ Router.put('/AccBal', (req, res) => {
                 mariadb.query(`UPDATE client SET balance = ${newAmt} WHERE email = '${req.query.email}'`, (err, rows, fields) => {
                     if (!err) {
                         res.send(rows)
+                        return
                     }
                     else
                     {
@@ -81,6 +89,7 @@ Router.put('/AccBal', (req, res) => {
                             error:true,
                             message:err
                         })
+                        return
                     }
                 });
             } else {
@@ -88,6 +97,7 @@ Router.put('/AccBal', (req, res) => {
                     error:true,
                     message:err
                 })
+                return
             }
         })
     }

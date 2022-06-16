@@ -15,6 +15,7 @@ Router.get('/Login', (req, res) => {
             error:true,
             message:"element of query were not found"
         })
+        return
     }
 
     if(!req.query.email)
@@ -23,6 +24,7 @@ Router.get('/Login', (req, res) => {
             error:true,
             message:"email is expacted as a element of query"
         })
+        return
     }
 
     if(!req.query.password)
@@ -31,6 +33,7 @@ Router.get('/Login', (req, res) => {
             error:true,
             message:"password is expacted as a element of query"
         })
+        return
     }
 
 
@@ -43,14 +46,16 @@ Router.get('/Login', (req, res) => {
                 if(req.query.password == rows.password)
                 {
                     res.send(rows)
+                    return
                 }
             }
             else
             {
                 res.send({ 
                     error:true,
-                    message:"Could't find any user with this email"
+                    message:"Could't find any user with this email"    
                 })
+                return
             }
            
         } else {
@@ -58,6 +63,7 @@ Router.get('/Login', (req, res) => {
                 error:true,
                 message:err
             })
+            return
 
         }
     })
@@ -77,6 +83,7 @@ Router.post('/Registration', (req, res, next) => {
             error:true,
             message:"element of query were not found"
         })
+        return
     }
 
     if(!req.query.firstname)
@@ -85,6 +92,7 @@ Router.post('/Registration', (req, res, next) => {
             error:true,
             message:"firstname is expacted as a element of query"
         })
+        return
     }
 
     if(!req.query.lastname)
@@ -93,6 +101,7 @@ Router.post('/Registration', (req, res, next) => {
             error:true,
             message:"lastname is expacted as a element of query"
         })
+        return
     }
 
     if(!req.query.email)
@@ -109,17 +118,20 @@ Router.post('/Registration', (req, res, next) => {
             error:true,
             message:"password is expacted as a element of query"
         })
+        return
     }
 
 
     mariadb.query(`INSERT INTO client VALUES(DEFAULT,'${req.query.firstname}','${req.query.lastname}','${req.query.email}','${req.query.password}',DEFAULT)`, (err, rows, fields) => {
         if (!err) {
             res.send(rows);
+            return
         } else {
             res.send({
                 error:true,
                 message:err
             });
+            return
         }
     })
 });
