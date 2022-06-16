@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "cbec7a57-1e3a-4f18-9874-2c687e2a995e",
+		"name": "Client_Request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19755888"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"\",\r\n    \"password\":\"\",\r\n    \"firstname\":\"\",\r\n    \"lastname\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7000/registration",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"registration"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
